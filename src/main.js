@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify';
+import * as fb from 'firebase'
 
 Vue.config.productionTip = false
 
@@ -10,5 +11,15 @@ new Vue({
   router,
   store,
   vuetify,
+  created() {
+    fb.initializeApp({
+      apiKey: 'AIzaSyD5mgcTCPSiTxPfmTmBmPFWZU7GdR9l1BQ',
+      authDomain: 'vue-project-132f7.firebaseapp.com',
+      databaseURL: 'https://vue-project-132f7.firebaseio.com',
+      projectId: 'vue-project-132f7',
+      storageBucket: 'vue-project-132f7.appspot.com',
+      messagingSenderId: '1075767797368'
+    })
+  },
   render: h => h(App)
 }).$mount('#app')
