@@ -17,7 +17,7 @@
           <v-flex xs12>
             <v-card-text>
               <v-text-field label="Title" name="title" type="text" v-model="editedTitle" />
-              <v-text-field
+              <v-textarea
                 label="Description"
                 name="description"
                 type="text"
