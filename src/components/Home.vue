@@ -5,8 +5,8 @@
         <v-flex xs12>
           <v-carousel>
             <v-carousel-item v-for="ad in promoAds" :key="ad.id" :src="ad.imageSrc">
-              <div class="car-link">
-                <v-btn class="error" :to="'/ad/' + ad.id">{{ ad.title }}</v-btn>
+              <div class="m-gear-link">
+                <v-btn class="teal darken-2" :to="'/ad/' + ad.id">{{ ad.title }}</v-btn>
               </div>
             </v-carousel-item>
           </v-carousel>
@@ -64,7 +64,7 @@ export default {
 </script>
 
 <style scoped>
-.car-link {
+.m-gear-link {
   position: absolute;
   bottom: 50px;
   left: 50%;

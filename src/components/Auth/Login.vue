@@ -3,8 +3,8 @@
     <v-row align="center" justify="center">
       <v-col cols="12" sm="8" md="4">
         <v-card class="elevation-12">
-          <v-toolbar color="primary" dark flat>
-            <v-toolbar-title>Login form</v-toolbar-title>
+          <v-toolbar color="teal darken-4" dark flat>
+            <v-toolbar-title>Sign In</v-toolbar-title>
           </v-toolbar>
           <v-card-text>
             <v-form ref="form" v-model="valid" validation>
@@ -31,7 +31,7 @@
           <v-card-actions>
             <v-spacer />
             <v-btn
-              color="primary"
+              color="warning"
               @click="onSubmit"
               :disabled="!valid || loading"
               :loading="loading"

@@ -1,19 +1,21 @@
 <template>
   <v-container>
     <v-layout row>
-      <v-flex xs12>
-        <v-card v-if="!loading">
-          <v-img height="300px" :src="ad.imageSrc"></v-img>
-          <v-card-text>
-            <h1 class="text--primary">{{ad.title}}</h1>
-            <p>{{ad.description}}</p>
-          </v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <app-edit-ad-modal :ad="ad" v-if="isOwner"></app-edit-ad-modal>
-            <app-buy-modal :ad="ad"></app-buy-modal>
-          </v-card-actions>
-        </v-card>
+      <v-flex xs12 class="d-flex justify-center">
+        <div v-if="!loading">
+          <v-card width="600px">
+            <v-img height="300px" :src="ad.imageSrc"></v-img>
+            <v-card-text>
+              <h1 class="text--primary">{{ad.title}}</h1>
+              <p class="pt-3">{{ad.description}}</p>
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <app-edit-ad-modal :ad="ad" v-if="isOwner"></app-edit-ad-modal>
+              <app-buy-modal :ad="ad"></app-buy-modal>
+            </v-card-actions>
+          </v-card>
+        </div>
         <div v-else class="text-center pt-5">
           <v-progress-circular :size="100" :width="4" color="purple" indeterminate></v-progress-circular>
         </div>

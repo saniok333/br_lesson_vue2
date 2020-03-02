@@ -14,20 +14,22 @@
 
         <v-list-item @click="onLogout" v-if="isUserLoggedIn">
           <v-list-item-icon>
-            <v-icon>mdi-exit-to-app</v-icon>
+            <v-icon>mdi-account-arrow-right</v-icon>
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title v-text="'Logout'"></v-list-item-title>
+            <v-list-item-title v-text="'Log Out'"></v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app color="primary" dark>
+    <v-app-bar app color="teal darken-4" dark>
       <v-app-bar-nav-icon @click="drawer = !drawer" class="hidden-md-and-up"></v-app-bar-nav-icon>
       <v-toolbar-title>
-        <router-link to="/" tag="span" class="pointer">Ad application</router-link>
+        <router-link to="/" tag="span" class="pointer">
+          <v-icon left>mdi-guitar-electric</v-icon>MUSIC GEAR
+        </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -36,7 +38,7 @@
           {{link.title}}
         </v-btn>
         <v-btn text @click="onLogout" v-if="isUserLoggedIn">
-          <v-icon left>mdi-exit-to-app</v-icon>Logout
+          <v-icon left>mdi-account-arrow-right</v-icon>Log out
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
@@ -77,14 +79,18 @@ export default {
     links() {
       if (this.isUserLoggedIn) {
         return [
-          { title: "Orders", icon: "mdi-bookmark-outline", url: "/orders" },
-          { title: "New ad", icon: "mdi-file-plus", url: "/new" },
-          { title: "My ads", icon: "mdi-menu", url: "/list" }
+          { title: "Create ad", icon: "mdi-pen-plus", url: "/new" },
+          { title: "My ads", icon: "mdi-format-list-numbered", url: "/list" },
+          {
+            title: "Orders",
+            icon: "mdi-clipboard-check-multiple",
+            url: "/orders"
+          }
         ];
       }
       return [
-        { title: "Login", icon: "mdi-lock", url: "/login" },
-        { title: "Registration", icon: "mdi-face", url: "/registration" }
+        { title: "Log In", icon: "mdi-account-arrow-left", url: "/login" },
+        { title: "Sign Up", icon: "mdi-account-plus", url: "/registration" }
       ];
     }
   },
